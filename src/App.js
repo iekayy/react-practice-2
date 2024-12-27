@@ -1,22 +1,46 @@
-import { useState } from "react";
-import Dropdown from "./components/Dropdown";
+import SideBar from './components/SideBar';
+import DropdownPage from './pages/Dropdownpage';
+import AccordionPage from './pages/Accordionpage';
+import Route from './components/Route';
+import ButtonPage from './pages/Buttonpage';
+import ModalPage from './pages/ModalPage';
+import TablePage from './pages/TablePage';
+
 function App(){
-    const [selection,setSelection] = useState(null);
+   return <div className='ontainer mx-auto grid grid-cols-6 gap-4 mt-4'>
+    <SideBar/>
 
-    const handleSelect = (option)=>{
-        setSelection(option);
+    
+        
 
-    }
+        <div className='col-span-5'>
+            <Route path = "/accordion">
+            <AccordionPage/>
+            
+            </Route>
 
-    const options = [
-        {label: 'Red', value: 'red'},
-        {label: 'Green' ,value: 'green'},
-        {label: 'Bllue' ,value: 'blue'},
+            <Route path = "/">
+            <DropdownPage/>
 
 
-    ];
+            </Route>
 
-    return <Dropdown options = {options} value ={selection} onChange = {handleSelect}/>
+            <Route path = "/button">
+                <ButtonPage/>
+            </Route>
+
+            <Route path = "/modal">
+                <ModalPage/>
+            </Route>
+
+            <Route path = "/table">
+                <TablePage/>
+            </Route>
+
+        </div>
+        
+    
+   </div>;
     
     
 }
