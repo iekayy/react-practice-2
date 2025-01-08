@@ -7,7 +7,8 @@ function SideBar (){
         {label: "accordion",path:'/accordion'},
         {label: "button", path:"/button"},
         {label: "modal",path:"/modal"},
-        {label: "table",path:"/table"}
+        {label: "table",path:"/table"},
+        {label: "counter", path:"/counter"}
         
     ];
 
